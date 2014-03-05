@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project( Game )
+add_executable( Game main.cpp Game.cpp)
+include(FindPkgConfig)
+PKG_SEARCH_MODULE( SDL2 REQUIRED sdl2)
+include_directories( ${SDL2_INCLUDE_DIRS} )
+target_link_libraries( Game ${SDL2_LIBRARIES} )
